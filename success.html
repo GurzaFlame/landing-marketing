@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оплата прошла успешно!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #08090A;
+      color: #F0F2F5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .success-container { max-width: 500px; }
+    .success-icon { font-size: 4rem; margin-bottom: 24px; animation: bounce 1s ease-in-out; }
+    .success-title {
+      font-size: 2rem; font-weight: 700; margin-bottom: 16px;
+      background: linear-gradient(135deg, #22C55E, #3B82F6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .success-text { color: #8B92A5; font-size: 1.1rem; line-height: 1.7; margin-bottom: 16px; }
+    .success-details {
+      background: #111318; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 24px; margin: 24px 0; text-align: left;
+    }
+    .success-details p { color: #8B92A5; font-size: 0.95rem; margin-bottom: 8px; }
+    .success-details strong { color: #F0F2F5; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; font-family: 'Inter', sans-serif;
+      font-size: 1rem; font-weight: 600; border: none;
+      border-radius: 12px; cursor: pointer; text-decoration: none;
+      background: linear-gradient(135deg, #22C55E, #3B82F6);
+      color: white; box-shadow: 0 4px 24px rgba(34,197,94,0.4);
+      transition: all 0.3s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(34,197,94,0.5); }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-icon">✅</div>
+    <h1 class="success-title">Оплата прошла успешно!</h1>
+    <p class="success-text">
+      Спасибо за покупку! Доступ к курсам активирован.
+    </p>
+    <div class="success-details">
+      <p><strong>Тариф:</strong> <span id="tariff-name">—</span></p>
+      <p><strong>Доступ:</strong> Бессрочный</p>
+      <p><strong>Статус:</strong> Активен</p>
+    </div>
+    <p class="success-text" style="font-size:0.95rem;">
+      Письмо с инструкциями и ссылками на курсы отправлено на вашу электронную почту.
+      Если письма нет — проверьте папку «Спам».
+    </p>
+    <a href="/" class="btn">Перейти к курсам</a>
+  </div>
+  <script>
+    // Получаем тариф из URL параметров
+    const params = new URLSearchParams(window.location.search);
+    const tariff = params.get('tariff');
+    const tariffNames = { start: 'Старт', pro: 'Профессионал', max: 'Максимум' };
+    document.getElementById('tariff-name').textContent = tariffNames[tariff] || '—';
+  </script>
+</body>
+</html>

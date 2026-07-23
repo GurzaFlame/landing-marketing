@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спасибо за заявку!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #08090A;
+      color: #F0F2F5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .thanks-container { max-width: 500px; }
+    .thanks-icon { font-size: 4rem; margin-bottom: 24px; animation: bounce 1s ease-in-out; }
+    .thanks-title {
+      font-size: 2rem; font-weight: 700; margin-bottom: 16px;
+      background: linear-gradient(135deg, #3B82F6, #22C55E);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .thanks-text { color: #8B92A5; font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; font-family: 'Inter', sans-serif;
+      font-size: 1rem; font-weight: 600; border: none;
+      border-radius: 12px; cursor: pointer; text-decoration: none;
+      background: linear-gradient(135deg, #3B82F6, #22C55E);
+      color: white; box-shadow: 0 4px 24px rgba(59,130,246,0.4);
+      transition: all 0.3s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(59,130,246,0.5); }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+  </style>
+</head>
+<body>
+  <div class="thanks-container">
+    <div class="thanks-icon">🎉</div>
+    <h1 class="thanks-title">Спасибо за заявку!</h1>
+    <p class="thanks-text">
+      Ваша заявка принята. Мы перезвоним вам в течение 15 минут.
+      Проверьте электронную почту — мы отправили подтверждение.
+    </p>
+    <a href="/" class="btn">← Вернуться на главную</a>
+  </div>
+</body>
+</html>
